@@ -1,13 +1,15 @@
-FROM python:3.10-slim-buster
+# Use an official Python runtime as a parent image
+FROM python:3.10-slim
 
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
+# Set the working directory
+WORKDIR /app
 
-RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /shobanafilterbot
-WORKDIR /shobanafilterbot
-COPY start.sh /start.sh
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Run bot.py when the container launches
 CMD ["python3", "bot.py"]
 

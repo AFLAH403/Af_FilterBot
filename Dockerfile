@@ -13,3 +13,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Run bot.py when the container launches
 CMD ["python3", "bot.py"]
 
+RUN apt-get update && apt-get install -y git

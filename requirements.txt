@@ -55,6 +55,11 @@ youtube-search
 youtube-search-python>=1.4.6
 ytthumb
 python-telegram-bot==20.3
+python-telegram-bot==20.6
+aiohttp
+requests
+git+https://github.com/agronholm/anyio
+
 git+https://github.com/agronholm/anyio
 git+https://github.com/Joelkb/cinemagoer
 
